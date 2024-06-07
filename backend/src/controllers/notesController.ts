@@ -1,5 +1,11 @@
 import { Request, Response } from 'express';
-import { createNoteService, getAllNotesService, getNoteByIdService, updateNoteByIdService, deleteNoteByIdService } from '../services/notesService';
+import { 
+  createNoteService, 
+  getAllNotesService, 
+  getNoteByIdService, 
+  updateNoteByIdService, 
+  deleteNoteByIdService } 
+  from '../services/notesService';
 
 export const createNote = async (req: Request, res: Response) => {
   const { title, content } = req.body;
