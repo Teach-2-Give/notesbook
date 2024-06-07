@@ -4,6 +4,7 @@ import pool from './db';
 import notesRoutes from './routes/notesRoutes';
 import swaggerUi from 'swagger-ui-express';
 import YAML from 'yamljs';
+import healthRoutes from './routes/healthRoutes';
 
 dotenv.config();
 
@@ -15,6 +16,7 @@ const swaggerDocument = YAML.load('./src/swagger.yaml');
 app.use(express.json());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(notesRoutes);
+app.use(healthRoutes);
 
 app.get('/', async (req, res) => {
   try {
