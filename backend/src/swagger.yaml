@@ -113,3 +113,118 @@ components:
         created_at:
           type: string
           format: date-time
+openapi: 3.0.0
+info:
+  title: Notes API
+  description: API for managing notes
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+paths:
+  /notes:
+    post:
+      summary: Create a new note
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                content:
+                  type: string
+      responses:
+        '201':
+          description: Note created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Note'
+    get:
+      summary: Fetch all notes
+      responses:
+        '200':
+          description: A list of notes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Note'
+  /notes/{id}:
+    get:
+      summary: Get a note by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Note details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Note'
+    put:
+      summary: Update a note by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                content:
+                  type: string
+      responses:
+        '200':
+          description: Note updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Note'
+    delete:
+      summary: Delete a note by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Note deleted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+
+components:
+  schemas:
+    Note:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        content:
+          type: string
+        created_at:
+          type: string
+          format: date-time
