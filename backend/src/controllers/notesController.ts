@@ -35,7 +35,7 @@ export const getAllNotes = async (req: Request, res: Response) => {
 };
 
 export const getNoteById = async (req: Request, res: Response) => {
-  const id = parseInt(req.params.id, 10);  // Convert string to number
+  const id = parseInt(req.params.id, 10);
   try {
     const note = await getNoteByIdService(id);
     if (!note) {
@@ -52,7 +52,7 @@ export const getNoteById = async (req: Request, res: Response) => {
 };
 
 export const updateNoteById = async (req: Request, res: Response) => {
-  const id = parseInt(req.params.id, 10);  // Convert string to number
+  const id = parseInt(req.params.id, 10);
   const { title, content } = req.body;
   try {
     const note = await updateNoteByIdService(id, title, content);
@@ -70,7 +70,7 @@ export const updateNoteById = async (req: Request, res: Response) => {
 };
 
 export const deleteNoteById = async (req: Request, res: Response) => {
-  const id = parseInt(req.params.id, 10);  // Convert string to number
+  const id = parseInt(req.params.id, 10);
   try {
     const message = await deleteNoteByIdService(id);
     res.status(200).json({ message });

@@ -1,8 +1,8 @@
 import request from 'supertest';
-import app from '../src/server';  // Adjust the path if necessary
+import app from '../src/server';
 import pool from '../src/db';
 
-// Ensure the database is set up before running tests
+
 beforeAll(async () => {
   await pool.query(`
     CREATE TABLE IF NOT EXISTS notes (
@@ -14,7 +14,7 @@ beforeAll(async () => {
   `);
 });
 
-// Clean up the database after running tests
+
 afterAll(async () => {
   await pool.query(`DROP TABLE IF EXISTS notes;`);
   await pool.end();
