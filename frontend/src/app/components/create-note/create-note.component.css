@@ -1,0 +1,80 @@
+.note-form-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.note-form-container:hover {
+  transform: translateY(-5px);
+}
+
+.note-form-header {
+  margin-bottom: 20px;
+  color: #444;
+  font-size: 26px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.form-field {
+  margin-bottom: 15px;
+}
+
+.form-field label {
+  font-weight: bold;
+  color: #555;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-control {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.input-control:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+.primary-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.primary-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+
+.primary-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.close-form {
+  cursor: pointer;
+  color: #888;
+  font-size: 20px;
+  float: right;
+  transition: color 0.3s ease-in-out;
+}
+
+.close-form:hover {
+  color: #000;
+}

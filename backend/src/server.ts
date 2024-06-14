@@ -5,10 +5,20 @@ import notesRoutes from './routes/notesRoutes';
 import swaggerUi from 'swagger-ui-express';
 import YAML from 'yamljs';
 import healthRoutes from './routes/healthRoutes';
+import cors from 'cors';
 
 dotenv.config();
 
 const app = express();
+
+
+app.use(cors({
+  origin: 'http://localhost:4200',
+  methods: 'GET,POST,PUT,DELETE',
+  allowedHeaders: 'Content-Type,Authorization',
+  optionsSuccessStatus: 200
+}));
+
 const port = process.env.PORT || 3000;
 
 const swaggerDocument = YAML.load('./src/swagger.yaml');
