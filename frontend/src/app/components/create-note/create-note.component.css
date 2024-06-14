@@ -43,12 +43,12 @@
 
 .input-control:focus {
   outline: none;
-  border-color: #007bff;
+  border-color: #365372;
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
 }
 
 .primary-button {
-  background-color: #007bff;
+  background-color: #365372;
   color: #fff;
   border: none;
   padding: 12px 20px;
@@ -58,7 +58,7 @@
 }
 
 .primary-button:hover {
-  background-color: #0056b3;
+  background-color: #74b3f7;
   transform: translateY(-3px);
 }
 
